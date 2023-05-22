@@ -22,5 +22,21 @@ We created a light weight backend to serve up the content from Airtable. In orde
 
 ```
 JOBS_KEY=YOURPERSONALACCESSTOKENHERE
+```
 
+### API Endpoints
+
+To view jobs, visit [http://localhost:3000/api/jobs](http://localhost:3000/api/jobs).
+
+To view featured jobs, visit [http://localhost:3000/api/jobs/featured](http://localhost:3000/api/jobs/featured).
+
+To view a single job, visit [http://localhost:3000/api/jobs/:id](http://localhost:3000/api/jobs/:id) and replace `:id` with the id for the job/Airtable record you want to view.
+
+Caching has been turned off on these endpoints so that you can make changes in Airtable and see them instantly on the page.
+
+You can add caching back by adding the following line to the API files:
+
+```js
+// Caches the results for 5 minutes
+res.setHeader("Cache-Control", "s-maxage=300, stale-while-revalidate");
 ```

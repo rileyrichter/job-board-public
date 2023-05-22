@@ -5,7 +5,6 @@ export const config = {
 };
 
 export default function handler(req, res) {
-  res.setHeader("Cache-Control", "s-maxage=300, stale-while-revalidate");
   const options = {
     headers: {
       Authorization: `Bearer ${process.env.JOBS_KEY}`,
